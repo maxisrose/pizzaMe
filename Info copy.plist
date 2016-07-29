@@ -45,18 +45,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeShuffle</string>
-			<key>UIApplicationShortcutSubtitle</key>
-			<string>Pizza Me!</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Pizza Me!</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>pizzaForce</string>
-		</dict>
-	</array>
 </dict>
 </plist>

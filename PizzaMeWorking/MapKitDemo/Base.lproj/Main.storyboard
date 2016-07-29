@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -71,7 +72,20 @@
                     <view key="view" contentMode="scaleToFill" id="Oas-AN-meZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-7J-kgI">
+                                <rect key="frame" x="115" y="115" width="371" height="370"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RtS-7J-kgI" secondAttribute="height" multiplier="203:202" id="u6s-Cr-8t0"/>
+                                </constraints>
+                                <state key="normal" image="pizzaMeTran-2.png"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RtS-7J-kgI" firstAttribute="top" secondItem="0Fc-0T-7XU" secondAttribute="bottom" constant="51" id="bLx-9w-FAr"/>
+                            <constraint firstItem="lUz-nx-R4D" firstAttribute="top" secondItem="RtS-7J-kgI" secondAttribute="bottom" constant="71" id="eiW-AT-VIi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UuU-Tb-MqP"/>
                 </viewController>
@@ -177,6 +191,9 @@
             <point key="canvasLocation" x="747" y="286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pizzaMeTran-2.png" width="406" height="404"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qJE-dG-ci2"/>
     </inferredMetricsTieBreakers>

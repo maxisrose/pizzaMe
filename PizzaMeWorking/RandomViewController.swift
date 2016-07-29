@@ -15,9 +15,10 @@ class RandomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for item in mapItems! {
-            print(item.name!)
-        }
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "2.png")!)
+//        for item in mapItems! {
+//            print(item.name!)
+//        }
     }
     
 }

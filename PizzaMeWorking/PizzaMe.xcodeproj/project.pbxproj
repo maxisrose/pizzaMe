@@ -18,6 +18,7 @@
 		3FD52B941D3F4130002EF980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD52B921D3F4130002EF980 /* LaunchScreen.storyboard */; };
 		4078891B1D4AE470003ECAE2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4078891A1D4AE470003ECAE2 /* 2.png */; };
 		4078891F1D4AF652003ECAE2 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4078891E1D4AF652003ECAE2 /* RandomViewController.swift */; };
+		407889271D4B04A1003ECAE2 /* pizzaMeTran-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 407889261D4B04A1003ECAE2 /* pizzaMeTran-2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3FD52B951D3F4130002EF980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4078891A1D4AE470003ECAE2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		4078891E1D4AF652003ECAE2 /* RandomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomViewController.swift; path = ../RandomViewController.swift; sourceTree = "<group>"; };
+		407889261D4B04A1003ECAE2 /* pizzaMeTran-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pizzaMeTran-2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +74,10 @@
 				4078891E1D4AF652003ECAE2 /* RandomViewController.swift */,
 				3FD52B8A1D3F4130002EF980 /* Main.storyboard */,
 				3FD52B901D3F4130002EF980 /* Assets.xcassets */,
-				4078891A1D4AE470003ECAE2 /* 2.png */,
 				3FD52B921D3F4130002EF980 /* LaunchScreen.storyboard */,
 				3FD52B951D3F4130002EF980 /* Info.plist */,
+				407889261D4B04A1003ECAE2 /* pizzaMeTran-2.png */,
+				4078891A1D4AE470003ECAE2 /* 2.png */,
 				3F649A0F1D402BB200DC4FB7 /* pizzaIcon1.png */,
 				3F649A111D402F0A00DC4FB7 /* Thats-Amore.mp3 */,
 				3FD52B8D1D3F4130002EF980 /* PizzaMe.xcdatamodeld */,
@@ -141,6 +144,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407889271D4B04A1003ECAE2 /* pizzaMeTran-2.png in Resources */,
 				4078891B1D4AE470003ECAE2 /* 2.png in Resources */,
 				3F649A121D402F0A00DC4FB7 /* Thats-Amore.mp3 in Resources */,
 				3F649A101D402BB200DC4FB7 /* pizzaIcon1.png in Resources */,
