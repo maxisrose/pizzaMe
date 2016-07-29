@@ -21,12 +21,7 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "2.png")!)
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
+        zoomToLocation()
         
         //hid search bar
         pizzaMeSearch.hidden = true
@@ -44,23 +39,14 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
 //        self.locationManager.startUpdatingLocation()
-        searchForPizza()
+//        searchForPizza()
     }
     
 //-------------------------- outlets and actions and variables --------------------------//
     
-    @IBAction func pizzaMeButtonPressed(sender: UIButton) {
-                if CLLocationManager.locationServicesEnabled() {
-                    locationManager.delegate = self
-                    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-                    locationManager.startUpdatingLocation()
-                }
-//        locationManager.startUpdatingLocation()
-        searchForPizza()
-    }
-    
-    @IBOutlet weak var pizzaMeSearch: UITextField!
     @IBOutlet weak var myMapView: MKMapView!
+    
+    @IBOutlet weak var pizzaMeSearch: UISearchBar!
     
     var pizzaImage: UIImage?
     let locationManager = CLLocationManager()
@@ -69,9 +55,9 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     
 //-------------------------- map View functions --------------------------//
     
-//    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-//        searchForPizza()
-//    }
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        searchForPizza()
+    }
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         mapView.centerCoordinate = userLocation.location!.coordinate
@@ -98,13 +84,28 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         //        tabBarController?.childViewControllers[1]
     }
     
+//-------------------------- segue functions --------------------------//
+
+    
+    
+    
+    
 //-------------------------- other functions --------------------------//
+    
+    func zoomToLocation(){
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
     
     func saveData(anonArray: [MKPointAnnotation]) {
         self.anonArray = anonArray
     }
     
     func searchForPizza() {
+        anonArray = []
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = "Pizza"
         request.region = myMapView.region
