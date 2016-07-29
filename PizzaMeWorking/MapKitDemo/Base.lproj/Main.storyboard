@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,24 +20,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="p7p-IT-hCH">
-                                <rect key="frame" x="20" y="116" width="560" height="440"/>
+                                <rect key="frame" x="20" y="116" width="560" height="432"/>
                             </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkM-vJ-fzM">
-                                <rect key="frame" x="20" y="78" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tHw-WS-Zy9">
+                                <rect key="frame" x="20" y="64" width="560" height="44"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="p7p-IT-hCH" secondAttribute="trailing" id="1ux-LP-vF4"/>
-                            <constraint firstItem="PkM-vJ-fzM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4H5-ea-icM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PkM-vJ-fzM" secondAttribute="trailing" id="MBb-zi-EkX"/>
+                            <constraint firstItem="tHw-WS-Zy9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="21X-kg-2R5"/>
                             <constraint firstItem="p7p-IT-hCH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VBa-RG-E4w"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p7p-IT-hCH" secondAttribute="bottom" id="Y38-IG-3XM"/>
-                            <constraint firstItem="PkM-vJ-fzM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14" id="axo-3b-DLF"/>
-                            <constraint firstItem="PkM-vJ-fzM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cqE-fI-D8J"/>
-                            <constraint firstItem="p7p-IT-hCH" firstAttribute="top" secondItem="PkM-vJ-fzM" secondAttribute="bottom" constant="8" id="nTD-Em-Z0t"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p7p-IT-hCH" secondAttribute="bottom" constant="8" id="gPR-iv-kYc"/>
+                            <constraint firstItem="p7p-IT-hCH" firstAttribute="top" secondItem="tHw-WS-Zy9" secondAttribute="bottom" constant="8" id="gzB-om-blp"/>
+                            <constraint firstItem="tHw-WS-Zy9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nU5-uj-SH6"/>
+                            <constraint firstItem="tHw-WS-Zy9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ooZ-3H-GLX"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -48,19 +47,71 @@
                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                             <state key="normal" title="Pizza Me"/>
                             <connections>
-                                <action selector="pizzaMeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PTy-rV-U1l"/>
+                                <segue destination="oTp-aK-Iln" kind="show" id="qJE-dG-ci2"/>
                             </connections>
                         </button>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myMapView" destination="p7p-IT-hCH" id="SDo-Uu-571"/>
-                        <outlet property="pizzaMeSearch" destination="PkM-vJ-fzM" id="fnl-2V-PC5"/>
+                        <outlet property="pizzaMeSearch" destination="tHw-WS-Zy9" id="gmY-qb-4MT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1559" y="-456"/>
+        </scene>
+        <!--Random View Controller-->
+        <scene sceneID="2qT-jD-8y6">
+            <objects>
+                <viewController storyboardIdentifier="random" id="oTp-aK-Iln" customClass="RandomViewController" customModule="PizzaMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Fc-0T-7XU"/>
+                        <viewControllerLayoutGuide type="bottom" id="lUz-nx-R4D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oas-AN-meZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-7J-kgI">
+                                <rect key="frame" x="20" y="21" width="560" height="558"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RtS-7J-kgI" secondAttribute="height" multiplier="203:202" id="IZv-5h-8fS"/>
+                                </constraints>
+                                <state key="normal" image="pizzaMeTran-2.png"/>
+                                <connections>
+                                    <action selector="pizzaMeButtonPressed:" destination="oTp-aK-Iln" eventType="touchUpInside" id="8OC-cu-XC7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="A9d-eK-Jyd">
+                                <rect key="frame" x="20" y="515" width="560" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Button needs to be bigger"/>
+                                <connections>
+                                    <action selector="callPizzaButtonPressed:" destination="oTp-aK-Iln" eventType="touchUpInside" id="feM-3q-PMg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lUz-nx-R4D" firstAttribute="top" secondItem="A9d-eK-Jyd" secondAttribute="bottom" id="5Y3-Vc-C9U"/>
+                            <constraint firstItem="A9d-eK-Jyd" firstAttribute="centerX" secondItem="Oas-AN-meZ" secondAttribute="centerX" id="BnP-cW-04z"/>
+                            <constraint firstItem="A9d-eK-Jyd" firstAttribute="leading" secondItem="Oas-AN-meZ" secondAttribute="leadingMargin" id="LCE-tT-vwt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A9d-eK-Jyd" secondAttribute="trailing" id="mxJ-Qn-FYJ"/>
+                            <constraint firstItem="RtS-7J-kgI" firstAttribute="leading" secondItem="Oas-AN-meZ" secondAttribute="leadingMargin" id="oO2-nV-EX6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RtS-7J-kgI" secondAttribute="trailing" id="reC-Zc-zAI"/>
+                            <constraint firstItem="RtS-7J-kgI" firstAttribute="centerY" secondItem="Oas-AN-meZ" secondAttribute="centerY" id="xud-iv-mv9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UuU-Tb-MqP"/>
+                    <connections>
+                        <outlet property="callPizzaButton" destination="A9d-eK-Jyd" id="Hae-MX-7mM"/>
+                        <outlet property="pizzaMeButton" destination="RtS-7J-kgI" id="d83-9j-LDe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4HH-yz-9ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2278" y="-94"/>
         </scene>
         <!--List Table View Controller-->
         <scene sceneID="7WZ-76-UzH">
@@ -71,21 +122,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pizzaCell" textLabel="qM2-9D-3ph" detailTextLabel="Q27-1w-QZg" style="IBUITableViewCellStyleValue1" id="PAL-pd-AVC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pizzaCell" textLabel="gUs-Uf-Eob" detailTextLabel="IFA-Xm-a7a" style="IBUITableViewCellStyleValue1" id="PAL-pd-AVC">
                                 <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PAL-pd-AVC" id="yW5-de-qhC">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qM2-9D-3ph">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gUs-Uf-Eob">
                                             <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q27-1w-QZg">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IFA-Xm-a7a">
                                             <rect key="frame" x="543" y="12" width="42" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -94,6 +145,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -108,12 +160,15 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                             <state key="normal" title="Pizza Me"/>
+                            <connections>
+                                <segue destination="oTp-aK-Iln" kind="show" id="2Uw-nh-hc0"/>
+                            </connections>
                         </button>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbh-QF-mut" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1505" y="302"/>
+            <point key="canvasLocation" x="1559" y="286"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="euV-qK-jFT">
@@ -173,4 +228,10 @@
             <point key="canvasLocation" x="747" y="286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pizzaMeTran-2.png" width="406" height="404"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2Uw-nh-hc0"/>
+    </inferredMetricsTieBreakers>
 </document>

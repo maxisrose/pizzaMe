@@ -16,6 +16,7 @@ class ListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "2.png")!)
         
     }
     
@@ -29,4 +30,12 @@ class ListTableViewController: UITableViewController {
         cell.detailTextLabel?.text = "1-(800)-CALLPIZZABUTT"
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let url = NSURL(string: "tel://\(indexPath.row)") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    
 }
