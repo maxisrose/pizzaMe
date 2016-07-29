@@ -17,13 +17,9 @@
 		3FD52B911D3F4130002EF980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD52B901D3F4130002EF980 /* Assets.xcassets */; };
 		3FD52B941D3F4130002EF980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD52B921D3F4130002EF980 /* LaunchScreen.storyboard */; };
 		4078891B1D4AE470003ECAE2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4078891A1D4AE470003ECAE2 /* 2.png */; };
-<<<<<<< HEAD
 		4078891F1D4AF652003ECAE2 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4078891E1D4AF652003ECAE2 /* RandomViewController.swift */; };
 		407889271D4B04A1003ECAE2 /* pizzaMeTran-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 407889261D4B04A1003ECAE2 /* pizzaMeTran-2.png */; };
 		4078892D1D4B1A58003ECAE2 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4078892C1D4B1A58003ECAE2 /* ListTableViewController.swift */; };
-=======
-		407889291D4B163F003ECAE2 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407889281D4B163F003ECAE2 /* ListTableViewController.swift */; };
->>>>>>> master
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +35,9 @@
 		3FD52B931D3F4130002EF980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FD52B951D3F4130002EF980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4078891A1D4AE470003ECAE2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		4078891E1D4AF652003ECAE2 /* RandomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomViewController.swift; path = ../RandomViewController.swift; sourceTree = "<group>"; };
 		407889261D4B04A1003ECAE2 /* pizzaMeTran-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pizzaMeTran-2.png"; sourceTree = "<group>"; };
 		4078892C1D4B1A58003ECAE2 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
-=======
-		407889281D4B163F003ECAE2 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
->>>>>>> master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +72,6 @@
 			children = (
 				3FD52B861D3F4130002EF980 /* AppDelegate.swift */,
 				3FD52B881D3F4130002EF980 /* MapViewController.swift */,
-				407889281D4B163F003ECAE2 /* ListTableViewController.swift */,
 				3F80A0821D467E7E004AF0FC /* pickerViewController.swift */,
 				4078891E1D4AF652003ECAE2 /* RandomViewController.swift */,
 				4078892C1D4B1A58003ECAE2 /* ListTableViewController.swift */,
@@ -178,7 +169,6 @@
 				3FD52B871D3F4130002EF980 /* AppDelegate.swift in Sources */,
 				4078892D1D4B1A58003ECAE2 /* ListTableViewController.swift in Sources */,
 				3F80A0831D467E7E004AF0FC /* pickerViewController.swift in Sources */,
-				407889291D4B163F003ECAE2 /* ListTableViewController.swift in Sources */,
 				3FD52B8F1D3F4130002EF980 /* PizzaMe.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
