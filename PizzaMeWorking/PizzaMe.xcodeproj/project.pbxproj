@@ -17,6 +17,7 @@
 		3FD52B911D3F4130002EF980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD52B901D3F4130002EF980 /* Assets.xcassets */; };
 		3FD52B941D3F4130002EF980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD52B921D3F4130002EF980 /* LaunchScreen.storyboard */; };
 		4078891B1D4AE470003ECAE2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4078891A1D4AE470003ECAE2 /* 2.png */; };
+		4078891F1D4AF652003ECAE2 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4078891E1D4AF652003ECAE2 /* RandomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3FD52B931D3F4130002EF980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FD52B951D3F4130002EF980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4078891A1D4AE470003ECAE2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		4078891E1D4AF652003ECAE2 /* RandomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomViewController.swift; path = ../RandomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				3FD52B861D3F4130002EF980 /* AppDelegate.swift */,
 				3FD52B881D3F4130002EF980 /* MapViewController.swift */,
 				3F80A0821D467E7E004AF0FC /* pickerViewController.swift */,
+				4078891E1D4AF652003ECAE2 /* RandomViewController.swift */,
 				3FD52B8A1D3F4130002EF980 /* Main.storyboard */,
 				3FD52B901D3F4130002EF980 /* Assets.xcassets */,
 				4078891A1D4AE470003ECAE2 /* 2.png */,
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4078891F1D4AF652003ECAE2 /* RandomViewController.swift in Sources */,
 				3FD52B891D3F4130002EF980 /* MapViewController.swift in Sources */,
 				3FD52B871D3F4130002EF980 /* AppDelegate.swift in Sources */,
 				3F80A0831D467E7E004AF0FC /* pickerViewController.swift in Sources */,

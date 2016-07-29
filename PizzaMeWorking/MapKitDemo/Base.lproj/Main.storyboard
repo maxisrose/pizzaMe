@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="1559" y="-456"/>
         </scene>
-        <!--View Controller-->
+        <!--Random View Controller-->
         <scene sceneID="2qT-jD-8y6">
             <objects>
-                <viewController id="oTp-aK-Iln" sceneMemberID="viewController">
+                <viewController id="oTp-aK-Iln" customClass="RandomViewController" customModule="PizzaMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Fc-0T-7XU"/>
                         <viewControllerLayoutGuide type="bottom" id="lUz-nx-R4D"/>

@@ -25,7 +25,6 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         
         //hid search bar
         pizzaMeSearch.hidden = true
-//        myMapView.showsUserLocation = true
         myMapView.delegate = self
         let image = UIImage(named: "pizzaIcon1")?.CGImage
         pizzaImage = UIImage(CGImage: image!, scale: 17.0, orientation: UIImageOrientation(rawValue: 1)!)
@@ -38,8 +37,6 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
-//        self.locationManager.startUpdatingLocation()
-//        searchForPizza()
     }
     
 //-------------------------- outlets and actions and variables --------------------------//
@@ -51,13 +48,16 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     var pizzaImage: UIImage?
     let locationManager = CLLocationManager()
     var anonArray: [MKPointAnnotation] = []
+    var itemsArray: [MKMapItem] = []
     
     
 //-------------------------- map View functions --------------------------//
     
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         searchForPizza()
+        print("region did change")
     }
+
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         mapView.centerCoordinate = userLocation.location!.coordinate
@@ -86,9 +86,10 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     
 //-------------------------- segue functions --------------------------//
 
-    
-    
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destination = segue.destinationViewController as! RandomViewController
+        destination.mapItems = self.itemsArray
+    }
     
 //-------------------------- other functions --------------------------//
     
@@ -106,6 +107,7 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     
     func searchForPizza() {
         anonArray = []
+        itemsArray = []
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = "Pizza"
         request.region = myMapView.region
@@ -117,8 +119,10 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
                     print(error)
                 } else if let mapItems = response?.mapItems {
                     for item in mapItems {
-                      self.placeItemOnTheMap(item)
+                        self.placeItemOnTheMap(item)
+                        self.itemsArray.append(item)
                     }
+                    print(self.itemsArray.count)
                 }
             })//close search
     }//close search for pizza
