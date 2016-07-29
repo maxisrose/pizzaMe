@@ -12,6 +12,7 @@ import MapKit
 class RandomViewController: UIViewController {
     
     var mapItems: [MKMapItem]?
+    @IBOutlet weak var pizzaMeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,4 +22,8 @@ class RandomViewController: UIViewController {
 //        }
     }
     
+    @IBAction func pizzaMeButtonPressed(sender: UIButton) {
+        //placeholder actions until function is added
+        pizzaMeButton.hidden = true
+    }
 }

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -72,18 +73,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-7J-kgI">
-                                <rect key="frame" x="115" y="115" width="406" height="404"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-7J-kgI">
+                                <rect key="frame" x="97" y="98" width="406" height="404"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RtS-7J-kgI" secondAttribute="height" multiplier="203:202" id="IZv-5h-8fS"/>
+                                </constraints>
                                 <state key="normal" image="pizzaMeTran-2.png"/>
+                                <connections>
+                                    <action selector="pizzaMeButtonPressed:" destination="oTp-aK-Iln" eventType="touchUpInside" id="8OC-cu-XC7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RtS-7J-kgI" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Oas-AN-meZ" secondAttribute="leadingMargin" priority="999" constant="95" id="USI-bR-fRC"/>
-                            <constraint firstItem="RtS-7J-kgI" firstAttribute="top" secondItem="0Fc-0T-7XU" secondAttribute="bottom" constant="51" id="vmQ-o4-i06"/>
+                            <constraint firstItem="RtS-7J-kgI" firstAttribute="leading" secondItem="Oas-AN-meZ" secondAttribute="leadingMargin" id="oO2-nV-EX6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RtS-7J-kgI" secondAttribute="trailing" id="reC-Zc-zAI"/>
+                            <constraint firstItem="RtS-7J-kgI" firstAttribute="centerY" secondItem="Oas-AN-meZ" secondAttribute="centerY" id="xud-iv-mv9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UuU-Tb-MqP"/>
+                    <connections>
+                        <outlet property="pizzaMeButton" destination="RtS-7J-kgI" id="d83-9j-LDe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4HH-yz-9ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
