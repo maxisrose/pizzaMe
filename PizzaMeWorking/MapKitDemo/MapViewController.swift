@@ -15,14 +15,7 @@ import CoreLocation
 
 var player: AVAudioPlayer?
 
-class ViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDelegate, pickerViewControllerDelegate{
-    
-    var pizzaImage: UIImage?
-    let locationManager = CLLocationManager()
-    var anonArray: [MKPointAnnotation] = []
-    func saveData(anonArray: [MKPointAnnotation]) {
-        self.anonArray = anonArray
-    }
+class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDelegate, pickerViewControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +35,48 @@ class ViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDel
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
+//        self.locationManager.startUpdatingLocation()
+        searchForPizza()
+    }
+    
+//-------------------------- outlets and actions and variables --------------------------//
+    
+    @IBAction func pizzaMeButtonPressed(sender: UIButton) {
+        //        if CLLocationManager.locationServicesEnabled() {
+        //            locationManager.delegate = self
+        //            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        //            locationManager.startUpdatingLocation()
+        //        }
+        searchForPizza()
+    }
+    
+    @IBOutlet weak var pizzaMeSearch: UITextField!
+    @IBOutlet weak var myMapView: MKMapView!
+    
+    var pizzaImage: UIImage?
+    let locationManager = CLLocationManager()
+    var anonArray: [MKPointAnnotation] = []
+    
+    
+//-------------------------- map View functions --------------------------//
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        searchForPizza()
     }
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         mapView.centerCoordinate = userLocation.location!.coordinate
     }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let view = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        view.image = pizzaImage
+        view.canShowCallout = true
+        return view
+    }
+
+//-------------------------- location manager functions --------------------------//
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Init the zoom level
@@ -59,24 +89,11 @@ class ViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDel
         //        tabBarController?.childViewControllers[1]
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as! pickerViewController
-        destination.anonArray = self.anonArray
-        destination.delegate = self
-        print("In main view controller\(anonArray)")
-    }
+//-------------------------- other functions --------------------------//
     
-    @IBAction func pizzaMeButtonPressed(sender: UIButton) {
-//        if CLLocationManager.locationServicesEnabled() {
-//            locationManager.delegate = self
-//            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-//            locationManager.startUpdatingLocation()
-//        }
-        searchForPizza()
+    func saveData(anonArray: [MKPointAnnotation]) {
+        self.anonArray = anonArray
     }
-    
-    @IBOutlet weak var pizzaMeSearch: UITextField!
-    @IBOutlet weak var myMapView: MKMapView!
     
     func searchForPizza() {
         let request = MKLocalSearchRequest()
@@ -93,8 +110,8 @@ class ViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDel
                       self.placeItemOnTheMap(item)
                     }
                 }
-            })
-    }
+            })//close search
+    }//close search for pizza
     
     func playSound() {
         let url = NSBundle.mainBundle().URLForResource("Thats-Amore", withExtension: "mp3")!
@@ -116,13 +133,5 @@ class ViewController: UIViewController, MKMapViewDelegate , CLLocationManagerDel
         annotation.subtitle = item.phoneNumber
 //        annotation.subtitle = item.placemark
         myMapView.addAnnotation(annotation)
-    }
-
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        let view = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
-        view.image = pizzaImage
-        view.canShowCallout = true
-        return view
     }
 }
