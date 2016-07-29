@@ -73,8 +73,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-7J-kgI">
-                                <rect key="frame" x="115" y="115" width="371" height="370"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-7J-kgI">
+                                <rect key="frame" x="115" y="115" width="406" height="404"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RtS-7J-kgI" secondAttribute="height" multiplier="203:202" id="u6s-Cr-8t0"/>
                                 </constraints>
@@ -83,8 +83,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RtS-7J-kgI" firstAttribute="top" secondItem="0Fc-0T-7XU" secondAttribute="bottom" constant="51" id="bLx-9w-FAr"/>
-                            <constraint firstItem="lUz-nx-R4D" firstAttribute="top" secondItem="RtS-7J-kgI" secondAttribute="bottom" constant="71" id="eiW-AT-VIi"/>
+                            <constraint firstItem="RtS-7J-kgI" firstAttribute="leading" secondItem="Oas-AN-meZ" secondAttribute="leadingMargin" priority="999" constant="95" id="USI-bR-fRC"/>
+                            <constraint firstItem="RtS-7J-kgI" firstAttribute="top" secondItem="0Fc-0T-7XU" secondAttribute="bottom" constant="51" id="vmQ-o4-i06"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UuU-Tb-MqP"/>
