@@ -20,9 +20,17 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "2.png")!)
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
         //hid search bar
         pizzaMeSearch.hidden = true
-        myMapView.showsUserLocation = true
+//        myMapView.showsUserLocation = true
         myMapView.delegate = self
         let image = UIImage(named: "pizzaIcon1")?.CGImage
         pizzaImage = UIImage(CGImage: image!, scale: 17.0, orientation: UIImageOrientation(rawValue: 1)!)
@@ -42,11 +50,12 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
 //-------------------------- outlets and actions and variables --------------------------//
     
     @IBAction func pizzaMeButtonPressed(sender: UIButton) {
-        //        if CLLocationManager.locationServicesEnabled() {
-        //            locationManager.delegate = self
-        //            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        //            locationManager.startUpdatingLocation()
-        //        }
+                if CLLocationManager.locationServicesEnabled() {
+                    locationManager.delegate = self
+                    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                    locationManager.startUpdatingLocation()
+                }
+//        locationManager.startUpdatingLocation()
         searchForPizza()
     }
     
@@ -60,9 +69,9 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     
 //-------------------------- map View functions --------------------------//
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        searchForPizza()
-    }
+//    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+//        searchForPizza()
+//    }
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         mapView.centerCoordinate = userLocation.location!.coordinate
@@ -81,7 +90,7 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Init the zoom level
         let coordinate: CLLocationCoordinate2D = (locationManager.location?.coordinate)!
-        let span = MKCoordinateSpanMake(0.8, 0.8)
+        let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(coordinate, span)
         self.myMapView.setRegion(region, animated: true)
         
@@ -113,6 +122,15 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
             })//close search
     }//close search for pizza
     
+    func placeItemOnTheMap(item: MKMapItem){
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = item.placemark.coordinate
+        annotation.title = item.name
+        annotation.subtitle = item.phoneNumber
+        //        annotation.subtitle = item.placemark
+        myMapView.addAnnotation(annotation)
+    }
+    
     func playSound() {
         let url = NSBundle.mainBundle().URLForResource("Thats-Amore", withExtension: "mp3")!
         do {
@@ -124,14 +142,5 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         } catch let error as NSError {
             print(error.description)
         }
-    }
-    
-    func placeItemOnTheMap(item: MKMapItem){
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = item.placemark.coordinate
-        annotation.title = item.name
-        annotation.subtitle = item.phoneNumber
-//        annotation.subtitle = item.placemark
-        myMapView.addAnnotation(annotation)
     }
 }

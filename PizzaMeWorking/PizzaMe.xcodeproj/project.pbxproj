@@ -16,6 +16,7 @@
 		3FD52B8F1D3F4130002EF980 /* PizzaMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FD52B8D1D3F4130002EF980 /* PizzaMe.xcdatamodeld */; };
 		3FD52B911D3F4130002EF980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD52B901D3F4130002EF980 /* Assets.xcassets */; };
 		3FD52B941D3F4130002EF980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD52B921D3F4130002EF980 /* LaunchScreen.storyboard */; };
+		4078891B1D4AE470003ECAE2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4078891A1D4AE470003ECAE2 /* 2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3FD52B901D3F4130002EF980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FD52B931D3F4130002EF980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FD52B951D3F4130002EF980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4078891A1D4AE470003ECAE2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				3F80A0821D467E7E004AF0FC /* pickerViewController.swift */,
 				3FD52B8A1D3F4130002EF980 /* Main.storyboard */,
 				3FD52B901D3F4130002EF980 /* Assets.xcassets */,
+				4078891A1D4AE470003ECAE2 /* 2.png */,
 				3FD52B921D3F4130002EF980 /* LaunchScreen.storyboard */,
 				3FD52B951D3F4130002EF980 /* Info.plist */,
 				3F649A0F1D402BB200DC4FB7 /* pizzaIcon1.png */,
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4078891B1D4AE470003ECAE2 /* 2.png in Resources */,
 				3F649A121D402F0A00DC4FB7 /* Thats-Amore.mp3 in Resources */,
 				3F649A101D402BB200DC4FB7 /* pizzaIcon1.png in Resources */,
 				3FD52B941D3F4130002EF980 /* LaunchScreen.storyboard in Resources */,
