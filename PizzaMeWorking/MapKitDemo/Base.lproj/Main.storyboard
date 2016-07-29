@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="2278" y="-94"/>
         </scene>
-        <!--Table View Controller-->
+        <!--List Table View Controller-->
         <scene sceneID="7WZ-76-UzH">
             <objects>
-                <tableViewController id="3si-9u-zCZ" sceneMemberID="viewController">
+                <tableViewController id="3si-9u-zCZ" customClass="ListTableViewController" customModule="PizzaMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="lwO-kn-37a">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,6 +202,6 @@
         <image name="pizzaMeTran-2.png" width="406" height="404"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qJE-dG-ci2"/>
+        <segue reference="2Uw-nh-hc0"/>
     </inferredMetricsTieBreakers>
 </document>
