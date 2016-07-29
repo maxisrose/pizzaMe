@@ -11,11 +11,12 @@
 		3F649A121D402F0A00DC4FB7 /* Thats-Amore.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F649A111D402F0A00DC4FB7 /* Thats-Amore.mp3 */; };
 		3F80A0831D467E7E004AF0FC /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80A0821D467E7E004AF0FC /* pickerViewController.swift */; };
 		3FD52B871D3F4130002EF980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD52B861D3F4130002EF980 /* AppDelegate.swift */; };
-		3FD52B891D3F4130002EF980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD52B881D3F4130002EF980 /* ViewController.swift */; };
+		3FD52B891D3F4130002EF980 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD52B881D3F4130002EF980 /* MapViewController.swift */; };
 		3FD52B8C1D3F4130002EF980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD52B8A1D3F4130002EF980 /* Main.storyboard */; };
 		3FD52B8F1D3F4130002EF980 /* PizzaMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FD52B8D1D3F4130002EF980 /* PizzaMe.xcdatamodeld */; };
 		3FD52B911D3F4130002EF980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD52B901D3F4130002EF980 /* Assets.xcassets */; };
 		3FD52B941D3F4130002EF980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD52B921D3F4130002EF980 /* LaunchScreen.storyboard */; };
+		4078891B1D4AE470003ECAE2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4078891A1D4AE470003ECAE2 /* 2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +25,13 @@
 		3F80A0821D467E7E004AF0FC /* pickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
 		3FD52B831D3F4130002EF980 /* PizzaMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD52B861D3F4130002EF980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3FD52B881D3F4130002EF980 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FD52B881D3F4130002EF980 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3FD52B8B1D3F4130002EF980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FD52B8E1D3F4130002EF980 /* PizzaMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PizzaMe.xcdatamodel; sourceTree = "<group>"; };
 		3FD52B901D3F4130002EF980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FD52B931D3F4130002EF980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FD52B951D3F4130002EF980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4078891A1D4AE470003ECAE2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				3FD52B861D3F4130002EF980 /* AppDelegate.swift */,
-				3FD52B881D3F4130002EF980 /* ViewController.swift */,
+				3FD52B881D3F4130002EF980 /* MapViewController.swift */,
 				3F80A0821D467E7E004AF0FC /* pickerViewController.swift */,
 				3FD52B8A1D3F4130002EF980 /* Main.storyboard */,
 				3FD52B901D3F4130002EF980 /* Assets.xcassets */,
+				4078891A1D4AE470003ECAE2 /* 2.png */,
 				3FD52B921D3F4130002EF980 /* LaunchScreen.storyboard */,
 				3FD52B951D3F4130002EF980 /* Info.plist */,
 				3F649A0F1D402BB200DC4FB7 /* pizzaIcon1.png */,
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4078891B1D4AE470003ECAE2 /* 2.png in Resources */,
 				3F649A121D402F0A00DC4FB7 /* Thats-Amore.mp3 in Resources */,
 				3F649A101D402BB200DC4FB7 /* pizzaIcon1.png in Resources */,
 				3FD52B941D3F4130002EF980 /* LaunchScreen.storyboard in Resources */,
@@ -150,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FD52B891D3F4130002EF980 /* ViewController.swift in Sources */,
+				3FD52B891D3F4130002EF980 /* MapViewController.swift in Sources */,
 				3FD52B871D3F4130002EF980 /* AppDelegate.swift in Sources */,
 				3F80A0831D467E7E004AF0FC /* pickerViewController.swift in Sources */,
 				3FD52B8F1D3F4130002EF980 /* PizzaMe.xcdatamodeld in Sources */,
