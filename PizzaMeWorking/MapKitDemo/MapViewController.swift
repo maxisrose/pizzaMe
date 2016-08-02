@@ -37,6 +37,7 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
+        
     }
     
 //-------------------------- outlets and actions and variables --------------------------//
@@ -49,6 +50,7 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     let locationManager = CLLocationManager()
     var anonArray: [MKPointAnnotation] = []
     var itemsArray: [MKMapItem] = []
+    let pizzaBool = UIApplication.sharedApplication().delegate as! AppDelegate
     
     
 //-------------------------- map View functions --------------------------//
@@ -70,6 +72,7 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         view.canShowCallout = true
         return view
     }
+    
 
 //-------------------------- location manager functions --------------------------//
     
@@ -124,6 +127,9 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
                     }
                     print(self.itemsArray.count)
                 }
+                if self.pizzaBool.pizzaForce {
+                    self.performSegueWithIdentifier("pizzaMeSegue", sender: nil)
+                }
             })//close search
     }//close search for pizza
     
@@ -141,9 +147,13 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         do {
             player = try AVAudioPlayer(contentsOfURL: url)
             guard let player = player else { return }
+            if player.playing{
+                player.stop()
+            }else{
+                player.prepareToPlay()
+                player.play()
+            }
             
-            player.prepareToPlay()
-            player.play()
         } catch let error as NSError {
             print(error.description)
         }

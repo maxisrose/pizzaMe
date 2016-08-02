@@ -22,6 +22,15 @@
 		4078892D1D4B1A58003ECAE2 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4078892C1D4B1A58003ECAE2 /* ListTableViewController.swift */; };
 		4078892F1D4BB1C4003ECAE2 /* loadScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4078892E1D4BB1C4003ECAE2 /* loadScreen.png */; };
 		407889311D4BB9FB003ECAE2 /* Pizza-Pepperoni.png in Resources */ = {isa = PBXBuildFile; fileRef = 407889301D4BB9FB003ECAE2 /* Pizza-Pepperoni.png */; };
+		4078894D1D4BD35B003ECAE2 /* pizzaButton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 407889441D4BD35B003ECAE2 /* pizzaButton1.png */; };
+		4078894E1D4BD35B003ECAE2 /* pizzaButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 407889451D4BD35B003ECAE2 /* pizzaButton2.png */; };
+		4078894F1D4BD35B003ECAE2 /* pizzaButton3.png in Resources */ = {isa = PBXBuildFile; fileRef = 407889461D4BD35B003ECAE2 /* pizzaButton3.png */; };
+		407889501D4BD35B003ECAE2 /* pizzaButton4.png in Resources */ = {isa = PBXBuildFile; fileRef = 407889471D4BD35B003ECAE2 /* pizzaButton4.png */; };
+		407889511D4BD35B003ECAE2 /* pizzaButton5.png in Resources */ = {isa = PBXBuildFile; fileRef = 407889481D4BD35B003ECAE2 /* pizzaButton5.png */; };
+		407889521D4BD35B003ECAE2 /* pizzaButton6.png in Resources */ = {isa = PBXBuildFile; fileRef = 407889491D4BD35B003ECAE2 /* pizzaButton6.png */; };
+		407889531D4BD35B003ECAE2 /* pizzaButton7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4078894A1D4BD35B003ECAE2 /* pizzaButton7.png */; };
+		407889541D4BD35B003ECAE2 /* pizzaButton8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4078894B1D4BD35B003ECAE2 /* pizzaButton8.png */; };
+		407889551D4BD35B003ECAE2 /* pizzaButton9.png in Resources */ = {isa = PBXBuildFile; fileRef = 4078894C1D4BD35B003ECAE2 /* pizzaButton9.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +51,15 @@
 		4078892C1D4B1A58003ECAE2 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		4078892E1D4BB1C4003ECAE2 /* loadScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadScreen.png; sourceTree = "<group>"; };
 		407889301D4BB9FB003ECAE2 /* Pizza-Pepperoni.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pizza-Pepperoni.png"; sourceTree = "<group>"; };
+		407889441D4BD35B003ECAE2 /* pizzaButton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizzaButton1.png; sourceTree = "<group>"; };
+		407889451D4BD35B003ECAE2 /* pizzaButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizzaButton2.png; sourceTree = "<group>"; };
+		407889461D4BD35B003ECAE2 /* pizzaButton3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizzaButton3.png; sourceTree = "<group>"; };
+		407889471D4BD35B003ECAE2 /* pizzaButton4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizzaButton4.png; sourceTree = "<group>"; };
+		407889481D4BD35B003ECAE2 /* pizzaButton5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizzaButton5.png; sourceTree = "<group>"; };
+		407889491D4BD35B003ECAE2 /* pizzaButton6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizzaButton6.png; sourceTree = "<group>"; };
+		4078894A1D4BD35B003ECAE2 /* pizzaButton7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizzaButton7.png; sourceTree = "<group>"; };
+		4078894B1D4BD35B003ECAE2 /* pizzaButton8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizzaButton8.png; sourceTree = "<group>"; };
+		4078894C1D4BD35B003ECAE2 /* pizzaButton9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizzaButton9.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +108,15 @@
 				4078892E1D4BB1C4003ECAE2 /* loadScreen.png */,
 				3F649A111D402F0A00DC4FB7 /* Thats-Amore.mp3 */,
 				3FD52B8D1D3F4130002EF980 /* PizzaMe.xcdatamodeld */,
+				407889441D4BD35B003ECAE2 /* pizzaButton1.png */,
+				407889451D4BD35B003ECAE2 /* pizzaButton2.png */,
+				407889461D4BD35B003ECAE2 /* pizzaButton3.png */,
+				407889471D4BD35B003ECAE2 /* pizzaButton4.png */,
+				407889481D4BD35B003ECAE2 /* pizzaButton5.png */,
+				407889491D4BD35B003ECAE2 /* pizzaButton6.png */,
+				4078894A1D4BD35B003ECAE2 /* pizzaButton7.png */,
+				4078894B1D4BD35B003ECAE2 /* pizzaButton8.png */,
+				4078894C1D4BD35B003ECAE2 /* pizzaButton9.png */,
 			);
 			name = pizzaMe;
 			path = MapKitDemo;
@@ -153,15 +180,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4078894F1D4BD35B003ECAE2 /* pizzaButton3.png in Resources */,
 				407889271D4B04A1003ECAE2 /* pizzaMeTran-2.png in Resources */,
 				4078892F1D4BB1C4003ECAE2 /* loadScreen.png in Resources */,
 				4078891B1D4AE470003ECAE2 /* 2.png in Resources */,
+				407889531D4BD35B003ECAE2 /* pizzaButton7.png in Resources */,
+				407889511D4BD35B003ECAE2 /* pizzaButton5.png in Resources */,
+				407889551D4BD35B003ECAE2 /* pizzaButton9.png in Resources */,
+				4078894E1D4BD35B003ECAE2 /* pizzaButton2.png in Resources */,
 				3F649A121D402F0A00DC4FB7 /* Thats-Amore.mp3 in Resources */,
+				4078894D1D4BD35B003ECAE2 /* pizzaButton1.png in Resources */,
 				3F649A101D402BB200DC4FB7 /* pizzaIcon1.png in Resources */,
+				407889521D4BD35B003ECAE2 /* pizzaButton6.png in Resources */,
 				3FD52B941D3F4130002EF980 /* LaunchScreen.storyboard in Resources */,
 				407889311D4BB9FB003ECAE2 /* Pizza-Pepperoni.png in Resources */,
 				3FD52B911D3F4130002EF980 /* Assets.xcassets in Resources */,
 				3FD52B8C1D3F4130002EF980 /* Main.storyboard in Resources */,
+				407889501D4BD35B003ECAE2 /* pizzaButton4.png in Resources */,
+				407889541D4BD35B003ECAE2 /* pizzaButton8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

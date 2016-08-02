@@ -10,7 +10,7 @@
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="PizzaMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapView" id="BYZ-38-t0r" customClass="MapViewController" customModule="PizzaMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -47,7 +47,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                             <state key="normal" title="Pizza Me"/>
                             <connections>
-                                <segue destination="oTp-aK-Iln" kind="show" id="qJE-dG-ci2"/>
+                                <segue destination="oTp-aK-Iln" kind="show" identifier="pizzaMeSegue" id="qJE-dG-ci2"/>
                             </connections>
                         </button>
                     </navigationItem>
@@ -78,15 +78,15 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RtS-7J-kgI" secondAttribute="height" multiplier="203:202" id="IZv-5h-8fS"/>
                                 </constraints>
-                                <state key="normal" image="pizzaMeTran-2.png"/>
+                                <state key="normal" image="pizzaButton1.png"/>
                                 <connections>
                                     <action selector="pizzaMeButtonPressed:" destination="oTp-aK-Iln" eventType="touchUpInside" id="8OC-cu-XC7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="A9d-eK-Jyd">
-                                <rect key="frame" x="20" y="515" width="560" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Button needs to be bigger"/>
+                                <rect key="frame" x="20" y="505" width="560" height="36"/>
+                                <color key="backgroundColor" red="0.93488138914108276" green="0.99583917856216431" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <connections>
                                     <action selector="callPizzaButtonPressed:" destination="oTp-aK-Iln" eventType="touchUpInside" id="feM-3q-PMg"/>
                                 </connections>
@@ -94,7 +94,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lUz-nx-R4D" firstAttribute="top" secondItem="A9d-eK-Jyd" secondAttribute="bottom" id="5Y3-Vc-C9U"/>
+                            <constraint firstItem="lUz-nx-R4D" firstAttribute="top" secondItem="A9d-eK-Jyd" secondAttribute="bottom" constant="10" id="5Y3-Vc-C9U"/>
                             <constraint firstItem="A9d-eK-Jyd" firstAttribute="centerX" secondItem="Oas-AN-meZ" secondAttribute="centerX" id="BnP-cW-04z"/>
                             <constraint firstItem="A9d-eK-Jyd" firstAttribute="leading" secondItem="Oas-AN-meZ" secondAttribute="leadingMargin" id="LCE-tT-vwt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A9d-eK-Jyd" secondAttribute="trailing" id="mxJ-Qn-FYJ"/>
@@ -117,13 +117,17 @@
         <scene sceneID="7WZ-76-UzH">
             <objects>
                 <tableViewController id="3si-9u-zCZ" customClass="ListTableViewController" customModule="PizzaMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="lwO-kn-37a">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lwO-kn-37a">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <mapView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="oXC-Jo-jPe">
+                            <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </mapView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pizzaCell" textLabel="gUs-Uf-Eob" detailTextLabel="IFA-Xm-a7a" style="IBUITableViewCellStyleValue1" id="PAL-pd-AVC">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PAL-pd-AVC" id="yW5-de-qhC">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -165,6 +169,9 @@
                             </connections>
                         </button>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myMapView" destination="oXC-Jo-jPe" id="ZAy-wd-O98"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbh-QF-mut" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,7 +180,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="euV-qK-jFT">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="tEU-kl-1wt" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="pizzaTab" automaticallyAdjustsScrollViewInsets="NO" id="tEU-kl-1wt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="WfX-dn-faW"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="WNQ-Z7-I7h">
@@ -192,7 +199,7 @@
         <!--Pizza Map View-->
         <scene sceneID="l0q-fx-Rei">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aH9-pN-cJu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mapNav" automaticallyAdjustsScrollViewInsets="NO" id="aH9-pN-cJu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pizza Map View" id="j83-fO-9WD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DGK-J1-S5s">
@@ -211,7 +218,7 @@
         <!--Pizza List View-->
         <scene sceneID="ZjQ-7m-yif">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pYd-P9-BYD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="tableNav" automaticallyAdjustsScrollViewInsets="NO" id="pYd-P9-BYD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pizza List View" id="Uiz-9W-sLL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AJq-B0-zzQ">
@@ -229,9 +236,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pizzaMeTran-2.png" width="406" height="404"/>
+        <image name="pizzaButton1.png" width="406" height="404"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Uw-nh-hc0"/>
+        <segue reference="qJE-dG-ci2"/>
     </inferredMetricsTieBreakers>
 </document>
