@@ -24,10 +24,10 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         zoomToLocation()
         
         //hid search bar
-        pizzaMeSearch.hidden = true
+        pizzaMeSearch.isHidden = true
         myMapView.delegate = self
-        let image = UIImage(named: "pizzaIcon1")?.CGImage
-        pizzaImage = UIImage(CGImage: image!, scale: 17.0, orientation: UIImageOrientation(rawValue: 1)!)
+        let image = UIImage(named: "pizzaIcon1")?.cgImage
+        pizzaImage = UIImage(cgImage: image!, scale: 17.0, orientation: UIImageOrientation(rawValue: 1)!)
         
 //        intro song
 //        playSound()
@@ -50,22 +50,22 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     let locationManager = CLLocationManager()
     var anonArray: [MKPointAnnotation] = []
     var itemsArray: [MKMapItem] = []
-    let pizzaBool = UIApplication.sharedApplication().delegate as! AppDelegate
+    let pizzaBool = UIApplication.shared.delegate as! AppDelegate
     
     
 //-------------------------- map View functions --------------------------//
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         searchForPizza()
         print("region did change")
     }
 
     
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         mapView.centerCoordinate = userLocation.location!.coordinate
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let view = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         view.image = pizzaImage
@@ -76,7 +76,7 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
 
 //-------------------------- location manager functions --------------------------//
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Init the zoom level
         let coordinate: CLLocationCoordinate2D = (locationManager.location?.coordinate)!
         let span = MKCoordinateSpanMake(0.075, 0.075)
@@ -89,8 +89,8 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     
 //-------------------------- segue functions --------------------------//
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as! RandomViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! RandomViewController
         destination.mapItems = self.itemsArray
     }
     
@@ -104,7 +104,7 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         }
     }
     
-    func saveData(anonArray: [MKPointAnnotation]) {
+    func saveData(_ anonArray: [MKPointAnnotation]) {
         self.anonArray = anonArray
     }
     
@@ -116,7 +116,7 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
         request.region = myMapView.region
         
         let search = MKLocalSearch(request: request)
-        search.startWithCompletionHandler({
+        search.start(completionHandler: {
             response, error in
                 if error != nil {
                     print(error)
@@ -128,12 +128,12 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
                     print(self.itemsArray.count)
                 }
                 if self.pizzaBool.pizzaForce {
-                    self.performSegueWithIdentifier("pizzaMeSegue", sender: nil)
+                    self.performSegue(withIdentifier: "pizzaMeSegue", sender: nil)
                 }
             })//close search
     }//close search for pizza
     
-    func placeItemOnTheMap(item: MKMapItem){
+    func placeItemOnTheMap(_ item: MKMapItem){
         let annotation = MKPointAnnotation()
         annotation.coordinate = item.placemark.coordinate
         annotation.title = item.name
@@ -143,11 +143,11 @@ class MapViewController: UIViewController, MKMapViewDelegate , CLLocationManager
     }
     
     func playSound() {
-        let url = NSBundle.mainBundle().URLForResource("Thats-Amore", withExtension: "mp3")!
+        let url = Bundle.main.url(forResource: "Thats-Amore", withExtension: "mp3")!
         do {
-            player = try AVAudioPlayer(contentsOfURL: url)
+            player = try AVAudioPlayer(contentsOf: url)
             guard let player = player else { return }
-            if player.playing{
+            if player.isPlaying{
                 player.stop()
             }else{
                 player.prepareToPlay()

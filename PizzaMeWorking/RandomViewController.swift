@@ -20,40 +20,40 @@ class RandomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        callPizzaButton.hidden = true
+        callPizzaButton.isHidden = true
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "2.png")!)
         
         for i in 1 ..< 10 {
             let image = UIImage(named: "pizzaButton\(i).png") as UIImage?
             pizzaButtons.append(image!)
         }
-        callPizzaButton.titleLabel?.textAlignment = NSTextAlignment.Center
+        callPizzaButton.titleLabel?.textAlignment = NSTextAlignment.center
     }
     
     
-    @IBAction func pizzaMeButtonPressed(sender: UIButton) {
+    @IBAction func pizzaMeButtonPressed(_ sender: UIButton) {
 //        callPizzaButton.hidden = true
         idx += 1
         if idx >= pizzaButtons.count {
             let alertController = UIAlertController(title: "Pizza Me!", message:
-                "Out of slices! Pay .99¢ for more?", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Just kidding. Enjoy your pizza!", style: UIAlertActionStyle.Default,handler: nil))
+                "Out of slices! Pay .99¢ for more?", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Just kidding. Enjoy your pizza!", style: UIAlertActionStyle.default,handler: nil))
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
 
             idx = 0
         }
-        pizzaMeButton.setImage(pizzaButtons[idx], forState: UIControlState.Normal)
+        pizzaMeButton.setImage(pizzaButtons[idx], for: UIControlState())
         //placeholder actions until function is added
         randomPizza()
         
 // button state can be differen and need to set text with setTitle
-        callPizzaButton.setTitle(pizzaItem!.name!, forState: UIControlState.Normal)
-        callPizzaButton.hidden = false
+        callPizzaButton.setTitle(pizzaItem!.name!, for: UIControlState())
+        callPizzaButton.isHidden = false
 
     }
-    @IBAction func callPizzaButtonPressed(sender: UIButton) {
-        let formatedNumber = pizzaItem!.phoneNumber!.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+    @IBAction func callPizzaButtonPressed(_ sender: UIButton) {
+        let formatedNumber = pizzaItem!.phoneNumber!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
 //        if let phoneCallURL:NSURL = NSURL(string: "tel://\(formatedNumber)") {
 //            let application:UIApplication = UIApplication.sharedApplication()
 //            if (application.canOpenURL(phoneCallURL)) {
@@ -61,9 +61,9 @@ class RandomViewController: UIViewController {
 //                application.openURL(phoneCallURL);
 //            }
 //        }
-        if let url = NSURL(string: "tel://\(formatedNumber)") {
+        if let url = URL(string: "tel://\(formatedNumber)") {
             print("pizza call made to \(pizzaItem!.phoneNumber!)")
-            UIApplication.sharedApplication().openURL(url)
+            UIApplication.shared.openURL(url)
         }
     }
     

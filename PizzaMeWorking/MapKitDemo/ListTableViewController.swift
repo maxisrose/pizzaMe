@@ -22,11 +22,11 @@ class ListTableViewController: UITableViewController, MKMapViewDelegate , CLLoca
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "2.png")!)
         searchForPizza()
-        myMapView.hidden = true
+        myMapView.isHidden = true
         
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Make rows")
         print(itemsArray.count)
         return itemsArray.count
@@ -34,8 +34,8 @@ class ListTableViewController: UITableViewController, MKMapViewDelegate , CLLoca
         
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("pizzaCell")!
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pizzaCell")!
         cell.textLabel?.text = itemsArray[indexPath.row].name!
         cell.detailTextLabel?.text = itemsArray[indexPath.row].phoneNumber!
         print("making a cell!")
@@ -52,22 +52,22 @@ class ListTableViewController: UITableViewController, MKMapViewDelegate , CLLoca
     //        return cell
     //    }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let formatedNumber = itemsArray[indexPath.row].phoneNumber!.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let formatedNumber = itemsArray[indexPath.row].phoneNumber!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
         
-        if let url = NSURL(string: "tel://\(formatedNumber)") {
+        if let url = URL(string: "tel://\(formatedNumber)") {
             print("pizza call made to \(itemsArray[indexPath.row].phoneNumber!)")
-            UIApplication.sharedApplication().openURL(url)
+            UIApplication.shared.openURL(url)
         }
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as! RandomViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! RandomViewController
         destination.mapItems = self.itemsArray
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Init the zoom level
         let coordinate: CLLocationCoordinate2D = (locationManager.location?.coordinate)!
         let span = MKCoordinateSpanMake(0.075, 0.075)
@@ -78,18 +78,18 @@ class ListTableViewController: UITableViewController, MKMapViewDelegate , CLLoca
         //        tabBarController?.childViewControllers[1]
     }
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         searchForPizza()
         print("region did change")
         tableView.reloadData()
     }
     
     
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         mapView.centerCoordinate = userLocation.location!.coordinate
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let view = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         view.canShowCallout = true
@@ -103,7 +103,7 @@ class ListTableViewController: UITableViewController, MKMapViewDelegate , CLLoca
         request.region = myMapView.region
         
         let search = MKLocalSearch(request: request)
-        search.startWithCompletionHandler({
+        search.start(completionHandler: {
             response, error in
             if error != nil {
                 print(error)
